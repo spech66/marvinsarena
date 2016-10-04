@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+      <DirectoryRef Id="APPLICATIONFOLDER">
+        <Directory Id="VS2010_PROJECTTEMPLATES_DIR">
+          <Component Id="MyRobot.zip" Guid="{85134509-C799-41C3-8E92-F1927F8985CD}">
+                <File Id="MyRobot.zip" Name="MyRobot.zip" KeyPath="yes" Source="..\_AdditionalDeployments\MyRobot.zip" />
+            </Component>
+            <Component Id="MyRobotVB.zip" Guid="{611C9FEF-5721-44A9-A049-B275CA5F859A}">
+                <File Id="MyRobotVB.zip" Name="MyRobotVB.zip" KeyPath="yes" Source="..\_AdditionalDeployments\MyRobotVB.zip" />
+            </Component>
+        </Directory>
+      </DirectoryRef>
+  </Fragment>
+    <Fragment>
+        <ComponentGroup Id="ComponentGroupTemplates">
+            <ComponentRef Id="MyRobot.zip" />
+            <ComponentRef Id="MyRobotVB.zip" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

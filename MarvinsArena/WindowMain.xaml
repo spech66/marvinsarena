@@ -1,0 +1,109 @@
+﻿<Window x:Class="MarvinsArena.WindowMain"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Marvin's Arena" Height="480" Width="640" Icon="/MarvinsArena;component/Game.ico" WindowStartupLocation="CenterScreen">
+
+    <Grid Width="Auto" Height="Auto">
+        <Grid.Resources>
+            <Image x:Key="MenuIconNew" Source="ToolBarIcons/new.png" Width="16" Height="16" ToolTip="New One-on-One" SnapsToDevicePixels="True" />
+            <Image x:Key="MenuIconOpen" Source="ToolBarIcons/open.png" Width="16" Height="16" ToolTip="Open" SnapsToDevicePixels="True" />
+            <Image x:Key="MenuIconSave" Source="ToolBarIcons/save.png" Width="16" Height="16" ToolTip="Save" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconConfigure" Source="ToolBarIcons/configure.png" Width="16" Height="16" ToolTip="Configure" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconMapEditor" Source="ToolBarIcons/mapeditor.png" Width="16" Height="16" ToolTip="Map Editor" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconCodeEditor" Source="ToolBarIcons/build.png" Width="16" Height="16" ToolTip="Code Editor" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconRun2D" Source="ToolBarIcons/run2d.png" Width="16" Height="16" ToolTip="Run 2D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconRun3D" Source="ToolBarIcons/run3d.png" Width="16" Height="16" ToolTip="Run 3D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconDocu" Source="ToolBarIcons/docu.png" Width="16" Height="16" ToolTip="Documentation" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconHelp" Source="ToolBarIcons/help.png" Width="16" Height="16" ToolTip="About" SnapsToDevicePixels="True"/>
+
+            <Image x:Key="ButtonIconNew" Source="ToolBarIcons/new.png" Width="16" Height="16" ToolTip="New One-on-One" SnapsToDevicePixels="True" />
+            <Image x:Key="ButtonIconOpen" Source="ToolBarIcons/open.png" Width="16" Height="16" ToolTip="Open" SnapsToDevicePixels="True" />
+            <Image x:Key="ButtonIconSave" Source="ToolBarIcons/save.png" Width="16" Height="16" ToolTip="Save" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconConfigure" Source="ToolBarIcons/configure.png" Width="16" Height="16" ToolTip="Configure" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconMapEditor" Source="ToolBarIcons/mapeditor.png" Width="16" Height="16" ToolTip="Map Editor" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconCodeEditor" Source="ToolBarIcons/build.png" Width="16" Height="16" ToolTip="Code Editor" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconRun2D" Source="ToolBarIcons/run2d.png" Width="16" Height="16" ToolTip="Run 2D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconRun3D" Source="ToolBarIcons/run3d.png" Width="16" Height="16" ToolTip="Run 3D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconDocu" Source="ToolBarIcons/docu.png" Width="16" Height="16" ToolTip="Documentation" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconHelp" Source="ToolBarIcons/help.png" Width="16" Height="16" ToolTip="About" SnapsToDevicePixels="True"/>
+        </Grid.Resources>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Gray" Offset="0" />
+                <GradientStop Color="Black" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Width="Auto" Height="24" DockPanel.Dock="Top">
+            <!-- File Menu -->
+            <MenuItem Header="Tournament">
+                <MenuItem Icon="{StaticResource MenuIconNew}" Header="New Tournament">
+                    <MenuItem Header="Single">
+                        <MenuItem Header="One-on-One" Click="MenuItemNewTournament_Click" Name="OneOnOne" />
+                        <MenuItem Header="Last Man Standing" Click="MenuItemNewTournament_Click" Name="LastManStanding" />
+                    </MenuItem>
+                    <MenuItem Header="Team">
+                        <MenuItem Header="Team-on-Team" Click="MenuItemNewTournament_Click" Name="TeamOnTeam" />
+                        <MenuItem Header="Last Team Standing" Click="MenuItemNewTournament_Click" Name="LastTeamStanding" />
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Open" Icon="{StaticResource MenuIconOpen}" Click="MenuItemOpen_Click" Name="MenuItemOpen" />
+                <Separator/>
+                <MenuItem Header="Save" Icon="{StaticResource MenuIconSave}" Click="MenuItemSave_Click" Name="MenuItemSave" />
+                <MenuItem Header="Save As..." Click="MenuItemSaveAs_Click" Name="MenuItemSaveAs" />
+                <Separator/>
+                <MenuItem Header="Exit" Click="MenuItemExit_Click" />
+            </MenuItem>
+            <!-- Tools Menu -->
+            <MenuItem Header="Tools">
+                <MenuItem Header="Configure Battle Engines" Icon="{StaticResource MenuIconConfigure}" Click="MenuItemConfigureBattleEngine_Click" />
+                <MenuItem Header="Map Editor" Icon="{StaticResource MenuIconMapEditor}" Click="MenuItemMapEditor_Click" />
+                <MenuItem Header="Code Editor" Icon="{StaticResource MenuIconCodeEditor}" Click="MenuItemCodeEditor_Click" />
+            </MenuItem>
+            <!-- Run Menu -->
+            <MenuItem Header="Run">
+                <MenuItem Header="2D Battle Engines" Icon="{StaticResource MenuIconRun2D}" Click="MenuItemRun2DBattleEngine_Click" Name="MenuItemRun2DBattleEngine" />
+                <MenuItem Header="3D Battle Engines" Icon="{StaticResource MenuIconRun3D}" Click="MenuItemRun3DBattleEngine_Click" Name="MenuItemRun3DBattleEngine" />
+            </MenuItem>
+            <!-- About Menu -->
+            <MenuItem Header="Help">
+                <MenuItem Header="Documentation" Icon="{StaticResource MenuIconDocu}" Click="MenuItemDocu_Click" />
+                <MenuItem Header="About" Icon="{StaticResource MenuIconHelp}" Click="MenuItemAbout_Click" />
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray Grid.Row="1" Background="#FF333333" SnapsToDevicePixels="True">
+            <ToolBar Band="1" BandIndex="1" SnapsToDevicePixels="True">
+                <!--<Button Click="MenuItemNewTournament_Click" Content="{StaticResource ButtonIconNew}" />-->
+                <Button Click="MenuItemOpen_Click" Content="{StaticResource ButtonIconOpen}" />
+                <Button Click="MenuItemSave_Click" Content="{StaticResource ButtonIconSave}" Name="ToolBarSave" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="2" SnapsToDevicePixels="True">
+                <Button Click="MenuItemConfigureBattleEngine_Click" Content="{StaticResource ButtonIconConfigure}" />
+                <Button Click="MenuItemMapEditor_Click" Content="{StaticResource ButtonIconMapEditor}" />
+                <Button Click="MenuItemCodeEditor_Click" Content="{StaticResource ButtonIconCodeEditor}" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="3" SnapsToDevicePixels="True">
+                <Button Click="MenuItemRun2DBattleEngine_Click" Content="{StaticResource ButtonIconRun2D}" Name="ToolBarRun2DBattleEngine" />
+                <Button Click="MenuItemRun3DBattleEngine_Click" Content="{StaticResource ButtonIconRun3D}" Name="ToolBarRun3DBattleEngine" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="4" SnapsToDevicePixels="True">
+                <Button Click="MenuItemDocu_Click" Content="{StaticResource ButtonIconDocu}" />
+                <Button Click="MenuItemAbout_Click" Content="{StaticResource ButtonIconHelp}" />
+            </ToolBar>
+        </ToolBarTray>
+
+        <ScrollViewer Grid.Row="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Canvas Name="Canvas1" DockPanel.Dock="Left" Margin="0, 0, 0, 0" SnapsToDevicePixels="True" />
+        </ScrollViewer>
+    </Grid>
+</Window>

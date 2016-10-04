@@ -1,0 +1,2 @@
+﻿WixVSExtension
+http://wix.sourceforge.net/manual-wix3/wixvsextension.htm

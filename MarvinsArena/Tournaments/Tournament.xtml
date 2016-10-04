@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tournament xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Bracket Teams="2" Rounds="2">
+    <Root>
+      <Bracket Deepth="0" Round="2" Current="0">
+        <Left Deepth="1" Round="1" Current="1" />
+        <Right Deepth="1" Round="1" Current="2" />
+      </Bracket>
+    </Root>
+  </Bracket>
+  <Rules Mode="OneOnOne" Teamsize="1" Rounds="3" Hitpoints="100" Missiles="10" MaxHeat="20" />
+  <Map>
+    <Map>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+      <base64Binary>AAAAAAAAAAA=</base64Binary>
+    </Map>
+  </Map>
+  <RobotManager>
+    <Teams>
+      <RobotTeam Team="1">
+        <Robots>
+          <RobotLoader Name="MyRobot" />
+        </Robots>
+      </RobotTeam>
+      <RobotTeam Team="2">
+        <Robots>
+          <RobotLoader Name="MyRobotVB" />
+        </Robots>
+      </RobotTeam>
+    </Teams>
+  </RobotManager>
+</Tournament>

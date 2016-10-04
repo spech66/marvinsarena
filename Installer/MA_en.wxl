@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+	<String Id="Feature_Title">Marvin's Arena Game</String>
+	<String Id="Feature_Sample">Sample Robots</String>
+  <String Id="Feature_Templates">Visual Studio Templates</String>
+
+  <String Id="LaunchCondition_VisualStudio">This setup requires Visual Studio 2010 C#, VB or C++ installed.</String>
+  <String Id="LaunchCondition_AdminPrivs">You must have Administrative rights on this machine to install [ProductName].</String>
+  <String Id="LaunchCondition_LaterVersion">A later version of [ProductName] is already installed.</String>
+  <String Id="LaunchCondition_Xnafx40">[ProductName] requires the XNA Framework Redistribuable 4.0. Setup will now exit.</String>
+
+  <String Id="Property_ProductCode">{0AABE28F-906E-47A1-98A9-AB7BBC458B83}</String>
+  <String Id="Property_UpgradeCode">{60765957-C089-41C1-8B74-A724F93728D6}</String>
+</WixLocalization>

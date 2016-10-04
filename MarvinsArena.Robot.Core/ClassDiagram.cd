@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MarvinsArena.Robot.Core.GameCore" Collapsed="true">
+    <Position X="5.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAEBA=</HashCode>
+      <FileName>GameCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.Collision" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAgAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>MessageExchangeFromHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.ScannerTarget" Collapsed="true">
+    <Position X="7.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>MessageExchangeFromHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.MessageExchangeFromHost" Collapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAQEAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>MessageExchangeFromHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.FireProjectile" Collapsed="true">
+    <Position X="3.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>MessageExchangeFromRobot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.MessageExchangeFromRobotEventArgs" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAgAAAAAAAAACAAAAAQAAAAAAAAAAAABA=</HashCode>
+      <FileName>MessageExchangeFromRobot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.CoreScannedRobotEventArgs" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RobotCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.CoreMessageReceivedFromTeammateEventArgs" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEIAAAAAA=</HashCode>
+      <FileName>RobotCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.Core.RobotCore" Collapsed="true">
+    <Position X="5.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAIAHlEiIAIQwAAQAFlAAGwcEQQBgEAAEQgAMIwA=</HashCode>
+      <FileName>RobotCore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MarvinsArena.Robot.Core.MessageExchangeType" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAABAAAAAQAAAAAAAAQAAA=</HashCode>
+      <FileName>MessageExchangeFromHost.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MarvinsArena.Robot.Core.ProjectileType" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>MessageExchangeFromRobot.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,82 @@
+============================================================================
+= Version 0.0.7.0                                                          =
+============================================================================
+New Features
+* Enhanced mini-map (objects) - Implemented by VikBorisov
+
+============================================================================
+= Version 0.0.6.0                                                          =
+============================================================================
+Migrated to .NET 4.0 and XNA 4. Visual Studio 2010 
+
+============================================================================
+= Version 0.0.5.0                                                          =
+============================================================================
+New Features
+* Code editor
+* Syntax highlighting for editor using Scintilla
+* Integrated compiler for code supporting C# and VB.NET
+* Highlight of important system messages
+* Rounds
+* New event RoundStarted
+
+Fixes
+* Cleaned up code for better maintainability
+* Teams can now win the match without killing all other teammates
+* All messages show full robot names now
+* Unusable buttons are disabled for better usability
+
+============================================================================
+= Version 0.0.4.0                                                          =
+============================================================================
+New Features
+* 3D Battle Engine: Robot name is now shown
+* 3D Battle Engine: Skybox
+
+Fixes
+* Fixed error "Could not create temporary class" during serialization of xml
+* 2D Battle Engine: Names are correctly centered now
+
+============================================================================
+= Version 0.0.3.0                                                          =
+============================================================================
+New Features
+* TeamRobot
+* Robot name enhanced by team and squad number
+
+Fixes
+* Team-on-Team creates two robots for each team now instead of one
+
+============================================================================
+= Version 0.0.2.2                                                          =
+============================================================================
+New Features
+
+Fixes
+* Creating a new tournament does not overwrite last opened tournament on first save
+* Team size selection is now showing the right value for single tournaments
+* Fixed crash in editor if map edges were selected
+* Code cleanup: FXCop, Stylecop and ReSharper
+* Fixed some typos
+
+============================================================================
+= Version 0.0.2.0                                                          =
+============================================================================
+New Features
+* Editor
+* Randomly selected themes
+* Commandline parameter "-notimeout". If it is set the robots timeout is disabled for debugging
+* Commandline parameter "-debug". If it is set the PrintDebug messages are shown
+* Added the possibility to start the battle engines directly using a dll instead of a tourney file. This creates a default battle.
+* 2D Battle Engine: Light for missiles and bullets added
+* Walls in the map
+* BaseRobot: New Stop methods
+* EnhancedRobot
+* Improved usability by adding default directories for tournaments and maps
+
+Fixes
+* Replaced the radar images for better readability
+* Fixed several descriptions and tool tips
+* 3D Battle Engine: Turret rotation is now shown correctly
+
+

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MarvinsArena.Core.CoreMain" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAIAAAAAAAAAAAAAAAAIAQAAAAAAAAAA=</HashCode>
+      <FileName>CoreMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.GameObject" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAAAIAgAAAAAAQAABAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.GameObjectBullet" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAQAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>GameObjectBullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.GameObjectMissile" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAAAA=</HashCode>
+      <FileName>GameObjectMissile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.GameObjectRobot" Collapsed="true">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIAAAAEECIAIQhEIIAAAQAEAQAAIBAEAAEAAABAAI=</HashCode>
+      <FileName>GameObjectRobot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.MarvinsArenaException" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MarvinsArenaException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.RobotHost" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQAABgAAECICIQgEAIEgMQAkAQAAIjAEAAsAAAAAAI=</HashCode>
+      <FileName>RobotHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.RobotLoader" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAAAgAAAAAAQAAAAECAAAEAAAAAAEAAAAEAAA=</HashCode>
+      <FileName>RobotLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.RobotManager" Collapsed="true">
+    <Position X="9.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAASAAEAAAAAAAAAAAAICAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RobotManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.RobotTeam" Collapsed="true">
+    <Position X="11" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAACAABABAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>RobotTeam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.Tournament" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAEAAAABAAEAAAAAAAAgAAAAAAAAAQABAAAAAAAAA=</HashCode>
+      <FileName>Tournament.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.Bracket" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAACAQBAIBAAAAAAACAKAAAIAAAA=</HashCode>
+      <FileName>TournamentBracket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.TournamentBracket" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAACCAEAAAAAAAAAAAgAAQAAAIAAAIAAAA=</HashCode>
+      <FileName>TournamentBracket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.TournamentMap" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABAAAAAACAAAAAAAAAAAAAAAAAAAAAIAEFA=</HashCode>
+      <FileName>TournamentMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Core.TournamentRules" Collapsed="true">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAQAoAAAIgCAALAICIAAAAAEAQAABAEBgAABAIxUAA=</HashCode>
+      <FileName>TournamentRules.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MarvinsArena.Core.LoadedRobotType" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>RobotHost.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MarvinsArena.Core.TournamentMode" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>TournamentRules.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

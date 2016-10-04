@@ -1,0 +1,98 @@
+﻿<Window x:Class="MarvinsArena.WindowNew"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uc="clr-namespace:MarvinsArena"
+    Title="New Tournament" Height="411" Width="449" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+    <Grid Background="DimGray">
+        <TabControl Margin="0,0,0,25">
+            <TabItem Header="Robots">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TreeView Name="treeView1" Grid.Column="0" Grid.RowSpan="2" SelectedItemChanged="treeView1_SelectedItemChanged" />
+                    <Button Grid.Column="1" Grid.Row="0" Height="23" Name="buttonAddRobot" VerticalAlignment="Bottom" Margin="0,0,0,40" Click="buttonAddRobot_Click">Add --&gt;</Button>
+                    <Button Grid.Column="1" Grid.Row="1" Height="23" Name="buttonRemoveRobot" VerticalAlignment="Top" Margin="0,40,0,0" Click="buttonRemoveRobot_Click">&lt;-- Remove</Button>
+                    <TreeView Name="treeView2" Grid.Column="2" Grid.RowSpan="2" />
+                    <GroupBox Grid.ColumnSpan="3" Grid.Row="2" Header="Information" Name="groupBox1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="3*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Name:" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="1" Grid.Row="0" Name="textBlockInfoName" Text="" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="Version:" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="textBlockInfoVersion" Text="" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Author:" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="1" Grid.Row="2" Name="textBlockInfoAuthor" Text="" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="Description:" VerticalAlignment="Top" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="textBlockInfoDescription" Text="" VerticalAlignment="Top" />
+                        </Grid>
+                    </GroupBox>                 
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tournament Rules">
+                <Grid Margin="8,8,8,8">              
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="25*" />
+                        <RowDefinition Height="80*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Name="textBlock2" Text="Team Size:" VerticalAlignment="Top" Foreground="White" />
+                    <uc:NumericUpDown Grid.Column="1" Grid.Row="0" x:Name="numericTeamsize" VerticalAlignment="Top" Foreground="White" ValueChanged="numericTeamsize_ValueChanged" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Name="textBlock3" Text="Rounds:" VerticalAlignment="Top" Foreground="White" />
+                    <uc:NumericUpDown Grid.Column="1" Grid.Row="1" x:Name="numericRounds" VerticalAlignment="Top" Foreground="White" ValueChanged="numericRounds_ValueChanged" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Name="textBlock4" Text="Hitpoints:" VerticalAlignment="Top" Foreground="White" />
+                    <uc:NumericUpDown Grid.Column="1" Grid.Row="2" x:Name="numericHitpoints" VerticalAlignment="Top" Foreground="White" ValueChanged="numericHitpoints_ValueChanged" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Name="textBlock5" Text="Max Heat:" VerticalAlignment="Top" Foreground="White" />
+                    <uc:NumericUpDown Grid.Column="1" Grid.Row="3" x:Name="numericMaxHeat" VerticalAlignment="Top" Foreground="White" ValueChanged="numericMaxHeat_ValueChanged" />
+                    <TextBlock Grid.Column="0" Grid.Row="4" Name="textBlock6" Text="Rockets:" VerticalAlignment="Top" Foreground="White" />
+                    <uc:NumericUpDown Grid.Column="1" Grid.Row="4" x:Name="numericRockets" VerticalAlignment="Top" Foreground="White" ValueChanged="numericRockets_ValueChanged" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Map">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="8*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="4*" />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="0" Grid.Row="0" Height="16" VerticalAlignment="Top" Name="radioButtonEmptyMap" IsChecked="False" Margin="4">Empty</RadioButton>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Name="textBlock7" Text="Map Size:" VerticalAlignment="Top" Foreground="White" Margin="4" />
+                    <uc:NumericUpDown Grid.Column="2" Grid.Row="0" x:Name="numericMapSize" VerticalAlignment="Top" Foreground="White" ValueChanged="numericMapSize_ValueChanged" />
+                    <RadioButton Grid.Column="0" Grid.Row="1" Height="16" VerticalAlignment="Top" Name="radioButtonMapFile" Margin="4">File</RadioButton>
+                    <TextBlock Grid.Column="1" Grid.Row="1" Name="textBlock8" Text="Map File:" VerticalAlignment="Top" Foreground="White" Margin="4" />
+                    <TextBlock Grid.Column="2" Grid.Row="1" Name="textBlockMapFile" Text="" Foreground="White" Margin="4,4,30,4" />
+                    <Button Grid.Column="2" Grid.Row="1" Name="buttonSelectMapFile" Foreground="White" HorizontalAlignment="Right" Width="20" Click="buttonSelectMapFile_Click" Margin="4">...</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="23" Width="120" Name="buttonStart" Click="buttonStart_Click">Start</Button>
+    </Grid>
+</Window>

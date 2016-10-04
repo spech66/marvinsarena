@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+	<DirectoryRef Id="APPLICATIONFOLDER">
+        <Directory Id="Samples" Name="Samples">
+            <Component Id="Samples.sln" Guid="{F2C1FB4F-0EC0-4D71-9D05-ACC84CE2AA75}">
+                <File Id="Samples.sln" Name="Samples.sln" KeyPath="yes" Source="..\Samples\Samples.sln" />
+            </Component>
+            <Component Id="Samples.suo" Guid="{5BF6F3DE-5A7D-431A-A773-8778695907DD}">
+                <File Id="Samples.suo" Name="Samples.suo" KeyPath="yes" Source="..\Samples\Samples.suo" />
+            </Component>
+            <Directory Id="MyRobot" Name="MyRobot">
+                <Component Id="MyRobot.cs" Guid="{2444D032-E617-4F7C-9256-EDCB55D60CF0}">
+                    <File Id="MyRobot.cs" Name="MyRobot.cs" KeyPath="yes" Source="..\Samples\MyRobot\MyRobot.cs" />
+                </Component>
+                <Component Id="MyRobot.csproj" Guid="{490EA78F-1DB6-4E35-8B55-6D8296EF0A4C}">
+                    <File Id="MyRobot.csproj" Name="MyRobot.csproj" KeyPath="yes" Source="..\Samples\MyRobot\MyRobot.csproj" />
+                </Component>
+                <Directory Id="Properties_1" Name="Properties">
+                    <Component Id="AssemblyInfo.cs_1" Guid="{BB26B209-1A90-42F8-AFBE-BB52842F766F}">
+                        <File Id="AssemblyInfo.cs_1" Name="AssemblyInfo.cs" KeyPath="yes" Source="..\Samples\MyRobot\Properties\AssemblyInfo.cs" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="MyRobotVB" Name="MyRobotVB">
+                <Component Id="MyRobot.vb" Guid="{1CC7A772-FE04-435B-91DC-81BC06C701F9}">
+                    <File Id="MyRobot.vb" Name="MyRobot.vb" KeyPath="yes" Source="..\Samples\MyRobotVB\MyRobot.vb" />
+                </Component>
+                <Component Id="MyRobotVB.vbproj" Guid="{27122D56-35AE-4B85-9EB8-8B722D758B24}">
+                    <File Id="MyRobotVB.vbproj" Name="MyRobotVB.vbproj" KeyPath="yes" Source="..\Samples\MyRobotVB\MyRobotVB.vbproj" />
+                </Component>
+                <Directory Id="MyProject" Name="My Project">
+                    <Component Id="Application.Designer.vb" Guid="{6CEDEB1C-8F7F-4735-9BB0-CB17205A8D96}">
+                        <File Id="Application.Designer.vb" Name="Application.Designer.vb" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Application.Designer.vb" />
+                    </Component>
+                    <Component Id="Application.myapp" Guid="{D4A859F7-0D70-443B-96F5-9CC636D462DC}">
+                        <File Id="Application.myapp" Name="Application.myapp" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Application.myapp" />
+                    </Component>
+                    <Component Id="AssemblyInfo.vb" Guid="{3B89B6CF-0985-4ABD-A27A-7AAAA4619AB6}">
+                        <File Id="AssemblyInfo.vb" Name="AssemblyInfo.vb" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\AssemblyInfo.vb" />
+                    </Component>
+                    <Component Id="Resources.Designer.vb" Guid="{5ED09E47-07BA-4EAB-8FDE-DF990172BCE0}">
+                        <File Id="Resources.Designer.vb" Name="Resources.Designer.vb" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Resources.Designer.vb" />
+                    </Component>
+                    <Component Id="Resources.resx" Guid="{15138BF8-6663-4536-9D77-D242AB29C7F1}">
+                        <File Id="Resources.resx" Name="Resources.resx" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Resources.resx" />
+                    </Component>
+                    <Component Id="Settings.Designer.vb" Guid="{5C475355-D001-4466-87DC-D4AF98FBFA4D}">
+                        <File Id="Settings.Designer.vb" Name="Settings.Designer.vb" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Settings.Designer.vb" />
+                    </Component>
+                    <Component Id="Settings.settings" Guid="{33C3D8D0-34FE-4EE9-910D-B97EBF7C0679}">
+                        <File Id="Settings.settings" Name="Settings.settings" KeyPath="yes" Source="..\Samples\MyRobotVB\My Project\Settings.settings" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="SitAndFire" Name="SitAndFire">
+                <Component Id="SitAndFire.cs" Guid="{80DAC52F-9AA6-4F73-8520-5A392CE22CCA}">
+                    <File Id="SitAndFire.cs" Name="SitAndFire.cs" KeyPath="yes" Source="..\Samples\SitAndFire\SitAndFire.cs" />
+                </Component>
+                <Component Id="SitAndFire.csproj" Guid="{6C0D0316-B9D9-421B-B716-9AB9F28FAB99}">
+                    <File Id="SitAndFire.csproj" Name="SitAndFire.csproj" KeyPath="yes" Source="..\Samples\SitAndFire\SitAndFire.csproj" />
+                </Component>
+                <Directory Id="Properties_2" Name="Properties">
+                    <Component Id="AssemblyInfo.cs_2" Guid="{A61E1705-2672-40CD-AB95-9B24AFC4A6F7}">
+                        <File Id="AssemblyInfo.cs_2" Name="AssemblyInfo.cs" KeyPath="yes" Source="..\Samples\SitAndFire\Properties\AssemblyInfo.cs" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="Test" Name="Test">
+                <Component Id="Test.cs" Guid="{5232DE22-D681-4458-9E7D-447D1D0AAB0E}">
+                    <File Id="Test.cs" Name="Test.cs" KeyPath="yes" Source="..\Samples\Test\Test.cs" />
+                </Component>
+                <Component Id="Test.csproj" Guid="{26928D01-A1BD-40BA-A194-F4054DFD235E}">
+                    <File Id="Test.csproj" Name="Test.csproj" KeyPath="yes" Source="..\Samples\Test\Test.csproj" />
+                </Component>
+                <Directory Id="Properties_3" Name="Properties">
+                    <Component Id="AssemblyInfo.cs_3" Guid="{99B8917B-E2B7-49D6-B58E-5E54B61DA8D9}">
+                        <File Id="AssemblyInfo.cs_3" Name="AssemblyInfo.cs" KeyPath="yes" Source="..\Samples\Test\Properties\AssemblyInfo.cs" />
+                    </Component>
+                </Directory>
+            </Directory>
+        </Directory>
+    </DirectoryRef>
+  </Fragment>
+    <Fragment>
+        <ComponentGroup Id="ComponentGroupSamples">
+            <ComponentRef Id="Samples.sln" />
+            <ComponentRef Id="Samples.suo" />
+            <ComponentRef Id="MyRobot.cs" />
+            <ComponentRef Id="MyRobot.csproj" />
+            <ComponentRef Id="AssemblyInfo.cs_1" />
+            <ComponentRef Id="MyRobot.vb" />
+            <ComponentRef Id="MyRobotVB.vbproj" />
+            <ComponentRef Id="Application.Designer.vb" />
+            <ComponentRef Id="Application.myapp" />
+            <ComponentRef Id="AssemblyInfo.vb" />
+            <ComponentRef Id="Resources.Designer.vb" />
+            <ComponentRef Id="Resources.resx" />
+            <ComponentRef Id="Settings.Designer.vb" />
+            <ComponentRef Id="Settings.settings" />
+            <ComponentRef Id="SitAndFire.cs" />
+            <ComponentRef Id="SitAndFire.csproj" />
+            <ComponentRef Id="AssemblyInfo.cs_2" />
+            <ComponentRef Id="Test.cs" />
+            <ComponentRef Id="Test.csproj" />
+            <ComponentRef Id="AssemblyInfo.cs_3" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>

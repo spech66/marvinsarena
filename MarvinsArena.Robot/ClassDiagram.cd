@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MarvinsArena.Robot.TeamRobot" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAQAAAIAEAgAAAAAAAAEEAAEAEAAAAA=</HashCode>
+      <FileName>TeamRobot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.EnhancedRobot" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgIAAAAAAAAAAAAAAAgAAAAAAACEIAAAAUAAAAA=</HashCode>
+      <FileName>EnhancedRobot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.BaseRobot" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAIAgAClEiZFIRoAAQAAFgBEocEQSQkAAAAY0AMOrA=</HashCode>
+      <FileName>BaseRobot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.ScannedRobotEventArgs" Collapsed="true">
+    <Position X="4.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScannedRobotEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarvinsArena.Robot.MessageReceivedFromTeammateEventArgs" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAEIAAAAAA=</HashCode>
+      <FileName>MessageReceivedFromTeammateEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="MarvinsArena.Robot.IRobot" Collapsed="true">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>IRobot.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

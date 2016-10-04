@@ -1,0 +1,58 @@
+﻿<Window x:Class="MarvinsArena.WindowConfigureBattleEngine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Configure" Height="300" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="215*"></RowDefinition>
+            <RowDefinition Height="47*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Gray" Offset="0" />
+                <GradientStop Color="Black" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Grid.Row="0">
+            <Expander Header="2D Battle Engine" Name="expander1" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Resolution:</Label>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Name="BE2DResolution"></ComboBox>
+                    <Label Grid.Row="1" Grid.Column="0">Fullscreen:</Label>
+                    <CheckBox Grid.Row="1" Grid.Column="1" Name="BE2DFullscreen"></CheckBox>
+                    <Label Grid.Row="2" Grid.Column="0">Light effects:</Label>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Name="BE2DLight"></CheckBox>
+                </Grid>
+            </Expander>
+            <Expander Header="3D Battle Engine" Name="expander2" IsExpanded="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Resolution:</Label>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Name="BE3DResolution"></ComboBox>
+                    <Label Grid.Row="1" Grid.Column="0">Fullscreen:</Label>
+                    <CheckBox Grid.Row="1" Grid.Column="1" Name="BE3DFullscreen"></CheckBox>
+                    <Label Grid.Row="2" Grid.Column="0">Multi Sampling:</Label>
+                    <CheckBox Grid.Row="2" Grid.Column="1" Name="BE3DMultiSampling"></CheckBox>
+                </Grid>
+            </Expander>
+        </StackPanel>
+        <Button Grid.Row="1" Margin="0,15,12,12" Name="buttonSave" HorizontalAlignment="Right" Width="75" Click="buttonSave_Click">Save</Button>
+    </Grid>
+</Window>

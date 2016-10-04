@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define ProductVersion="0.0.6.0" ?>
+
+  <Product Id="!(loc.Property_ProductCode)" UpgradeCode="!(loc.Property_UpgradeCode)" Name="Marvin's Arena" Language="1033" Version="$(var.ProductVersion)" Manufacturer="Sebastian Pech">
+		<Package InstallerVersion="200" Compressed="yes" />
+
+    <Upgrade Id="!(loc.Property_UpgradeCode)">
+      <UpgradeVersion Property="OLDERVERSIONBEINGUPGRADED" Minimum="0.0.0.0" IncludeMinimum="yes" Maximum="$(var.ProductVersion)" IncludeMaximum="no" />
+      <UpgradeVersion Property="NEWERVERSIONDETECTED" Minimum="$(var.ProductVersion)" IncludeMinimum="no" OnlyDetect="yes" />
+    </Upgrade>
+
+    <!--<Property Id="XNAFRAMEWORK30" Secure="yes">
+      <RegistrySearch Id="XnaFramework30RegLocator" Root="HKLM" Key="SOFTWARE\Microsoft\XNA\Framework\v3.0" Name="Installed" Type="raw" />
+    </Property>-->
+
+    <Condition Message="!(loc.LaunchCondition_AdminPrivs)">
+      <![CDATA[Privileged]]>
+    </Condition>
+
+    <PropertyRef Id="VS2010_IDE_VCSHARP_PROJECTSYSTEM_INSTALLED"/>
+    <PropertyRef Id="VS2010_IDE_VC_PROJECTSYSTEM_INSTALLED"/>
+    <PropertyRef Id="VS2010_IDE_VB_PROJECTSYSTEM_INSTALLED"/>
+    <PropertyRef Id="VC2010EXPRESS_IDE"/>
+    <PropertyRef Id="VCSHARP2010EXPRESS_IDE"/>
+    <PropertyRef Id="VB2010EXPRESS_IDE"/>
+    <PropertyRef Id="VS2010_PROJECTTEMPLATES_DIR"/>
+
+    <Condition Message="!(loc.LaunchCondition_VisualStudio)">
+      VS2010_IDE_VB_PROJECTSYSTEM_INSTALLED OR VS2010_IDE_VCSHARP_PROJECTSYSTEM_INSTALLED or VS2010_IDE_VC_PROJECTSYSTEM_INSTALLED OR VC2010EXPRESS_IDE OR VCSHARP2010EXPRESS_IDE OR VB2010EXPRESS_IDE
+    </Condition>
+
+    <CustomAction Id="CA_BlockOlderVersionInstall" Error="!(loc.LaunchCondition_LaterVersion)" />
+
+    <!--<CustomAction Id="CA_CheckForXnafx30" Error="!(loc.LaunchCondition_Xnafx40)" />-->
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Application folder -->
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="APPLICATIONFOLDER" Name="MarvinsArena">
+				</Directory>
+			</Directory>
+      <!-- Start Menu Entry -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="MarvinsArena"/>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature" Title="Marvin's Arena" Level="1">
+      <Feature Id="Payload" Title="!(loc.Feature_Title)" Level="1">
+        <ComponentGroupRef Id="ComponentGroup1" />
+      </Feature>
+      <Feature Id="FeatureSample" Title="!(loc.Feature_Sample)" Level="1">
+        <ComponentGroupRef Id="ComponentGroupSamples" />
+      </Feature>
+      <Feature Id="FeatureTemplates" Title="!(loc.Feature_Templates)" Level="1">
+        <ComponentGroupRef Id="ComponentGroupTemplates" />
+      </Feature>
+    </Feature>
+    
+    <Media Id="1" Cabinet="Installer.cab" EmbedCab="yes" />
+
+    <InstallExecuteSequence>
+      <Custom Action="CA_BlockOlderVersionInstall" After="FindRelatedProducts">
+        <![CDATA[NEWERVERSIONDETECTED]]>
+      </Custom>
+      <RemoveExistingProducts After="InstallInitialize" />
+      <LaunchConditions After="AppSearch"/>
+      <!--<Custom Action="CA_CheckForXnafx30" After="LaunchConditions">NOT XNAFRAMEWORK30 AND NOT Installed</Custom>-->
+
+      <Custom Action="VS2010InstallVSTemplates" Before="InstallFinalize">
+        VS2010_IDE_VB_PROJECTSYSTEM_INSTALLED OR VS2010_IDE_VCSHARP_PROJECTSYSTEM_INSTALLED OR VS2010_IDE_VC_PROJECTSYSTEM_INSTALLED
+      </Custom>
+      <Custom Action="VC2010InstallVSTemplates" Before="InstallFinalize">
+        VC2010EXPRESS_IDE
+      </Custom>
+      <Custom Action="VCSHARP2010InstallVSTemplates" Before="InstallFinalize">
+        VCSHARP2010EXPRESS_IDE
+      </Custom>
+      <Custom Action="VB2010InstallVSTemplates" Before="InstallFinalize">
+        VB2010EXPRESS_IDE
+      </Custom>
+    </InstallExecuteSequence>
+
+    <InstallUISequence>
+      <Custom Action="CA_BlockOlderVersionInstall" After="FindRelatedProducts">
+        <![CDATA[NEWERVERSIONDETECTED]]>
+      </Custom>
+      <LaunchConditions After="AppSearch"/>
+      <!--<Custom Action="CA_CheckForXnafx30" After="LaunchConditions">NOT XNAFRAMEWORK30 AND NOT Installed</Custom>-->
+    </InstallUISequence>
+
+    <UIRef Id="WixUI_Mondo"/>
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATIONFOLDER" />
+    <!--<WixVariable Id="WixUILicenseRtf" Value="License.rtf" />-->
+    <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\Banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Bitmaps\Dialog.bmp" />
+  </Product>
+</Wix>

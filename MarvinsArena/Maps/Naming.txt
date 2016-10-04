@@ -1,0 +1,6 @@
+	Minumum Size
+Small	8 x 8
+Medium	12 x 12
+Large	16 x 16
+Huge	20 x 20
+

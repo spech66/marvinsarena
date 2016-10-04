@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.36" Name="MarvinsArena">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.36\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="de-DE" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>True</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/Deployment/Robots/</Directory>
+  </AssemblyReferenceDirectories>
+  <Target Name="$(ProjectDir)/Deployment/2DBattleEngine.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Deployment/3DBattleEngine.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Deployment/MarvinsArena.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Robot.Core.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Robot.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.36">
+  <Targets>
+   <Target Name="$(ProjectDir)/Deployment/2DBattleEngine.exe">
+    <Modules>
+     <Module Name="2dbattleengine.exe">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'2DBattleEngine.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="BattleEngine2D">
+        <Types>
+         <Type Name="BattleEngine">
+          <Members>
+           <Member Name="#texturePixel">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'BattleEngine.texturePixel'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Update(Microsoft.Xna.Framework.GameTime)">
+            <Messages>
+             <Message Id="dmg" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'BattleEngine.Update(GameTime)'</Item>
+               <Item>'dmg'</Item>
+               <Item>'int'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Hud">
+          <Members>
+           <Member Name="#.ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Hud.Hud()'</Item>
+               <Item>'Hud.statusMessageActive'</Item>
+               <Item>'bool'</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Map">
+          <Members>
+           <Member Name="#.ctor(System.Int32,System.Int32)">
+            <Messages>
+             <Message Id="height+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>height+1</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="height+2" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>height+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+              <Issue>
+               <Item>height+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="widht+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>widht+1</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="widht+2" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>widht+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+              <Issue>
+               <Item>widht+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#heightmap">
+            <Messages>
+             <Message Id="Member" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.heightmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Heightmap">
+            <Messages>
+             <Message Id="Member" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.Heightmap'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.Heightmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MapScale">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-04-14 22:30:30Z" FixCategory="DependsOnFix">
+              <Issue>
+               <Item>'Map.MapScale'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Deployment/3DBattleEngine.exe">
+    <Modules>
+     <Module Name="3dbattleengine.exe">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'3DBattleEngine.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="BattleEngine3D">
+        <Types>
+         <Type Name="ArcBallCamera">
+          <Members>
+           <Member Name="#.ctor(BattleEngine3D.ArcBallCameraMode)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'ArcBallCamera.ArcBallCamera(ArcBallCameraMode)'</Item>
+               <Item>'ArcBallCamera.pitch'</Item>
+               <Item>'float'</Item>
+               <Item>0.0</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BattleEngine">
+          <Members>
+           <Member Name="#Update(Microsoft.Xna.Framework.GameTime)">
+            <Messages>
+             <Message Id="dmg" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'BattleEngine.Update(GameTime)'</Item>
+               <Item>'dmg'</Item>
+               <Item>'int'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="BSRenderer">
+          <Members>
+           <Member Name="#InitializeGraphics(Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.Int32)">
+            <Messages>
+             <Message Id="sphereResolution+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>sphereResolution+1</Item>
+               <Item>'BSRenderer.InitializeGraphics(GraphicsDevice, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Hud">
+          <Members>
+           <Member Name="#.ctor()">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Hud.Hud()'</Item>
+               <Item>'Hud.statusMessageActive'</Item>
+               <Item>'bool'</Item>
+               <Item>false</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Map">
+          <Members>
+           <Member Name="#.ctor(System.Int32,System.Int32)">
+            <Messages>
+             <Message Id="height+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>height+1</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="height+2" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>height+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+              <Issue>
+               <Item>height+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="widht+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>widht+1</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="widht+2" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>widht+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+              <Issue>
+               <Item>widht+2</Item>
+               <Item>'Map.Map(int, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#heightmap">
+            <Messages>
+             <Message Id="Member" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.heightmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Heightmap">
+            <Messages>
+             <Message Id="Member" TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.Heightmap'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Map.Heightmap'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Program">
+          <Members>
+           <Member Name="#Tournament">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Created="2009-04-14 22:30:30Z">
+              <Issue>
+               <Item>'Program.Tournament'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Core.dll">
+    <Modules>
+     <Module Name="marvinsarena.core.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'MarvinsArena.Core.dll'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MarvinsArena.Core">
+        <Types>
+         <Type Name="Bracket">
+          <Members>
+           <Member Name="#BuildTree(System.Int32,System.Int32,System.Int32,MarvinsArena.Core.Bracket)">
+            <Messages>
+             <Message Id="deepth+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>deepth+1</Item>
+               <Item>'Bracket.BuildTree(int, int, int, Bracket)'</Item>
+              </Issue>
+              <Issue>
+               <Item>deepth+1</Item>
+               <Item>'Bracket.BuildTree(int, int, int, Bracket)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetBrackets(System.Int32,System.Collections.Generic.List`1&lt;MarvinsArena.Core.Bracket&gt;&amp;)">
+            <Messages>
+             <Message Id="1#" TypeName="DoNotPassTypesByReference" Category="Microsoft.Design" CheckId="CA1045" Created="2009-04-14 19:57:16Z">
+              <Issue Level="CriticalWarning">
+               <Item>'list'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="GameObjectBullet">
+          <Members>
+           <Member Name="#.ctor(System.Int32)">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'GameObjectBullet.GameObjectBullet(int)'</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;GameObjectBullet..ctor(Int32)&#xD;&#xA;GameObject.set_Name(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="GameObjectMissile">
+          <Members>
+           <Member Name="#.ctor()">
+            <Messages>
+             <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'GameObjectMissile.GameObjectMissile()'</Item>
+               <Item>&#xD;&#xA;&#xD;&#xA;GameObjectMissile..ctor()&#xD;&#xA;GameObject.set_Name(String):Void</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="GameObjectRobot">
+          <Members>
+           <Member Name="#loader">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'GameObjectRobot.loader'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RobotHost">
+          <Members>
+           <Member Name="#AssemblyTitle">
+            <Accessors>
+             <Accessor Name="#get_AssemblyTitle()">
+              <Messages>
+               <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2009-04-15 10:22:24Z">
+                <Issue Name="IsNullOrEmpty">
+                 <Item>'string.operator !=(string, string)'</Item>
+                 <Item>'RobotHost.AssemblyTitle.get()'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="#Notify()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotHost.Notify()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Run()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotHost.Run()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Update(System.Double)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotHost.Update(double)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RobotLoader">
+          <Members>
+           <Member Name="#Load(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Byte[][])">
+            <Messages>
+             <Message TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotLoader.Load(string, int, int, int, int, byte[][])'</Item>
+               <Item>'Activator.CreateInstanceFrom(AppDomain, string, string)'</Item>
+               <Item>&#xD;&#xA;   -&gt;'RobotLoader.Load(string, int, int, int, int, byte[][])'&#xD;&#xA;   -&gt;'RobotLoader.Load(string, int, int, int, int, byte[][])'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RobotManager">
+          <Members>
+           <Member Name="#Teams">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotManager.Teams'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RobotTeam">
+          <Members>
+           <Member Name="#Robots">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotTeam.Robots'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Tournament">
+          <Members>
+           <Member Name="#SaveToXml()">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2009-04-14 19:57:16Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator !=(string, string)'</Item>
+               <Item>'Tournament.SaveToXml()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TournamentBracket">
+          <Members>
+           <Member Name="#.ctor(System.Int32,System.Boolean)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'TournamentBracket.TournamentBracket(int, bool)'</Item>
+               <Item>'TournamentBracket.maxDepth'</Item>
+               <Item>'int'</Item>
+               <Item>0</Item>
+              </Issue>
+             </Message>
+             <Message Id="teams+1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>teams+1</Item>
+               <Item>'TournamentBracket.TournamentBracket(int, bool)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Root">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'TournamentBracket.Root'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Rounds">
+            <Accessors>
+             <Accessor Name="#set_Rounds(System.Int32)">
+              <Messages>
+               <Message Id="value-1" TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233" Created="2009-04-14 19:57:16Z">
+                <Issue>
+                 <Item>value-1</Item>
+                 <Item>'TournamentBracket.Rounds.set(int)'</Item>
+                </Issue>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="TournamentMap">
+          <Members>
+           <Member Name="#Item[System.Int32,System.Int32]">
+            <Messages>
+             <Message TypeName="IndexersShouldNotBeMultidimensional" Category="Microsoft.Design" CheckId="CA1023" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'TournamentMap.this[int, int]'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Map">
+            <Messages>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'TournamentMap.Map'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Deployment/MarvinsArena.exe">
+    <Modules>
+     <Module Name="marvinsarena.exe">
+      <Messages>
+       <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Created="2009-04-14 19:57:16Z">
+        <Issue>
+         <Item>'MarvinsArena.exe'</Item>
+        </Issue>
+       </Message>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'MarvinsArena.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MarvinsArena">
+        <Types>
+         <Type Name="NumericUpDown">
+          <Members>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-04-14 19:57:16Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'RepeatButton'</Item>
+               <Item>'NumericUpDown.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'NumericUpDown'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Value">
+            <Messages>
+             <Message TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721" Status="Excluded" Created="2009-04-14 19:57:16Z" FixCategory="NonBreaking">
+              <Issue Name="BaseType">
+               <Item>'NumericUpDown.Value'</Item>
+               <Item>'DependencyObject.GetValue(DependencyProperty)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WindowAbout">
+          <Members>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-04-14 19:57:16Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Hyperlink'</Item>
+               <Item>'WindowAbout.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowAbout'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WindowMain">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Created="2009-04-14 19:57:16Z" FixCategory="DependsOnFix">
+            <Issue Name="DependsOnFix">
+             <Item>'WindowMain'</Item>
+             <Item>'Process'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#CreateLine(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-04-14 19:57:16Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'WindowMain.CreateLine(int, int, int, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateRectangle(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2009-04-14 19:57:16Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'WindowMain.CreateRectangle(int, int, int, int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MenuItemNewTournament_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-04-14 19:57:16Z">
+              <Issue Name="Parameter">
+               <Item>'sender'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.MenuItemNewTournament_Click(object, RoutedEventArgs)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'sender'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.MenuItemNewTournament_Click(object, RoutedEventArgs)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'sender'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.MenuItemNewTournament_Click(object, RoutedEventArgs)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MenuItemOpen_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowMain.MenuItemOpen_Click(object, RoutedEventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MenuItemSave_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2009-04-14 19:57:16Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'WindowMain.MenuItemSave_Click(object, RoutedEventArgs)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowMain.MenuItemSave_Click(object, RoutedEventArgs)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RunBattleEngine(System.String)">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2009-04-14 19:57:16Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'WindowMain.RunBattleEngine(string)'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowMain.RunBattleEngine(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-04-14 19:57:16Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'WindowMain.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowMain'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="WindowNew">
+          <Members>
+           <Member Name="#_CreateDelegate(System.Type,System.String)">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew._CreateDelegate(Type, string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#groupBox1">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.groupBox1'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#PopulateRobotTree()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.PopulateRobotTree()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="4" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2009-04-14 19:57:16Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Button'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'NumericUpDown'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'NumericUpDown'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'NumericUpDown'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'NumericUpDown'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TextBlock'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'TreeView'</Item>
+               <Item>'WindowNew.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Status="Excluded" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock1">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock1'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock2">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock2'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock3">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock3'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock4">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock4'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock5">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock5'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#textBlock6">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'WindowNew.textBlock6'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Robot.Core.dll">
+    <Modules>
+     <Module Name="marvinsarena.robot.core.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'MarvinsArena.Robot.Core.dll'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MarvinsArena.Robot.Core">
+        <Types>
+         <Type Name="MessageExchangeFromHost">
+          <Members>
+           <Member Name="#Collisions">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Excluded" Created="2009-04-14 22:04:28Z">
+              <Issue>
+               <Item>'MessageExchangeFromHost.Collisions'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Targets">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Excluded" Created="2009-04-14 22:04:28Z">
+              <Issue>
+               <Item>'MessageExchangeFromHost.Targets'</Item>
+              </Issue>
+              <Notes>
+               <User Name="SPech">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RobotCore">
+          <Members>
+           <Member Name="#FireBullet(System.Int32)">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotCore.FireBullet(int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FireMissile()">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Created="2009-04-14 19:57:16Z">
+              <Issue>
+               <Item>'RobotCore.FireMissile()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#team">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2009-04-14 22:04:28Z">
+              <Issue>
+               <Item>'RobotCore.team'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/Deployment/MarvinsArena.Robot.dll">
+    <Modules>
+     <Module Name="marvinsarena.robot.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2009-04-14 19:57:16Z">
+        <Issue Name="NoStrongName">
+         <Item>'MarvinsArena.Robot.dll'</Item>
+        </Issue>
+        <Notes>
+         <User Name="SPech">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="MarvinsArena.Robot">
+        <Types>
+         <Type Name="BaseRobot">
+          <Members>
+           <Member Name="#FireBullet(System.Int32)">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Created="2009-04-14 22:44:09Z">
+              <Issue>
+               <Item>'BaseRobot.FireBullet(int)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FireMissile()">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Created="2009-04-14 22:44:09Z">
+              <Issue>
+               <Item>'BaseRobot.FireMissile()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="SPech">
+    <Note Id="0" Modified="2009-04-14 21:33:55Z">Requires a lot of modifications on assembly load in sandbox</Note>
+    <Note Id="1" Modified="2009-04-14 21:34:45Z">Handle all exceptions from robots by disabling them</Note>
+    <Note Id="2" Modified="2009-04-14 21:37:41Z">All File Exceptions + XML</Note>
+    <Note Id="3" Modified="2009-04-14 21:38:42Z">ok</Note>
+    <Note Id="4" Modified="2009-04-14 21:38:57Z">ok</Note>
+    <Note Id="5" Modified="2009-04-15 09:40:29Z">WPF</Note>
+    <Note Id="6" Modified="2009-04-15 09:41:31Z">WPF</Note>
+    <Note Id="7" Modified="2009-04-15 10:03:43Z">Intended</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Resolution Name="Default">{0} appears to have no upstream public or protected callers.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+    <Resolution Name="Default">Change {0} to be read-only by removing the property setter.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+    <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotIndirectlyExposeMethodsWithLinkDemands" Category="Microsoft.Security" CheckId="CA2122">
+    <Resolution Name="Default">{0} calls into {1} which has a LinkDemand. By making this call, {1} is indirectly exposed to user code. Review the following call stack that might expose a way to circumvent security protection: {2}</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Resolution Name="Default">{0} initializes field {1} of type {2} to {3}. Remove this initialization because it will be done automatically by the runtime.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotPassTypesByReference" Category="Microsoft.Design" CheckId="CA1045">
+    <Resolution Name="Default">Consider a design that does not require that {0} be a reference parameter.</Resolution>
+   </Rule>
+   <Rule TypeName="IndexersShouldNotBeMultidimensional" Category="Microsoft.Design" CheckId="CA1023">
+    <Resolution Name="Default">Redesign indexer {0} to use a single string or integer value as its index.</Resolution>
+   </Rule>
+   <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+    <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+    <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
+    <Resolution Name="Default">Consider making {0} non-public or a constant.</Resolution>
+   </Rule>
+   <Rule TypeName="OperationsShouldNotOverflow" Category="Microsoft.Usage" CheckId="CA2233">
+    <Resolution Name="Default">Correct the potential overflow in the operation '{0}' in {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="PreferJaggedArraysOverMultidimensional" Category="Microsoft.Performance" CheckId="CA1814">
+    <Resolution Name="Default">{0} is a multidimensional array. Replace it with a jagged array if possible.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertyNamesShouldNotMatchGetMethods" Category="Microsoft.Naming" CheckId="CA1721">
+    <Resolution Name="BaseType">The property name {0} is confusing given the existence of inherited method {1}. Rename or remove this property.</Resolution>
+   </Rule>
+   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+    <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+    <Resolution Name="IsNullOrEmpty">Replace the call to {0} in {1} with a call to 'String.IsNullOrEmpty'.</Resolution>
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Resolution Name="DependsOnFix">Implement IDisposable on {0} because it creates members of the following IDisposable types: {1}. If {0} has previously shipped, adding new members that implement IDisposable to this type is considered a breaking change to existing consumers.</Resolution>
+   </Rule>
+   <Rule TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030">
+    <Resolution Name="Default">Consider making {0} an event.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <Icon Id="ProductIcon" SourceFile="..\MarvinsArena\Game.ico" />
+    <Property Id="ARPPRODUCTICON" Value="ProductIcon" />
+
+    <!-- Application -->
+    <DirectoryRef Id="APPLICATIONFOLDER">
+      <Component Id="File2DBattleEngine.exe" Guid="{C197B65F-4A14-435C-8163-36BA5B537867}">
+        <File Id="File2DBattleEngine.exe" Name="2DBattleEngine.exe" KeyPath="yes" Source="..\Deployment\2DBattleEngine.exe" />
+      </Component>
+      <Component Id="File2DBattleEngine.exe.config" Guid="{B6314703-0F65-45E6-A6A4-3FCA062094EA}">
+        <File Id="File2DBattleEngine.exe.config" Name="2DBattleEngine.exe.config" KeyPath="yes" Source="..\Deployment\2DBattleEngine.exe.config" />
+      </Component>
+      <Component Id="File3DBattleEngine.exe" Guid="{B0C6E5EB-336E-4E67-8F5A-E343FA5299E3}">
+        <File Id="File3DBattleEngine.exe" Name="3DBattleEngine.exe" KeyPath="yes" Source="..\Deployment\3DBattleEngine.exe" />
+      </Component>
+      <Component Id="File3DBattleEngine.exe.config" Guid="{5877EFD2-7BE6-4134-BA1C-011E4A01400D}">
+        <File Id="File3DBattleEngine.exe.config" Name="3DBattleEngine.exe.config" KeyPath="yes" Source="..\Deployment\3DBattleEngine.exe.config" />
+      </Component>
+      <Component Id="Documentation.chm" Guid="{50B4E196-84A2-4BAE-B4D0-7DA06E19F5B5}">
+        <File Id="Documentation.chm" Name="Documentation.chm" KeyPath="yes" Source="..\_AdditionalDeployments\Documentation.chm" />
+      </Component>
+      <Component Id="MarvinsArena.Core.dll" Guid="{A0656E7D-39FC-42DD-A6C3-4E83F92E98BB}">
+        <File Id="MarvinsArena.Core.dll" Name="MarvinsArena.Core.dll" KeyPath="yes" Source="..\Deployment\MarvinsArena.Core.dll" />
+      </Component>
+      <Component Id="MarvinsArena.exe" Guid="{4476D061-55E9-4D20-B58D-37F2742B7E34}">
+        <File Id="MarvinsArena.exe" Name="MarvinsArena.exe" KeyPath="yes" Source="..\Deployment\MarvinsArena.exe" />
+      </Component>
+      <Component Id="MarvinsArena.Robot.Core.dll_1" Guid="{4C713AA9-B2E3-4191-A6C5-3FE48FD85575}">
+        <File Id="MarvinsArena.Robot.Core.dll_1" Name="MarvinsArena.Robot.Core.dll" KeyPath="yes" Source="..\Deployment\MarvinsArena.Robot.Core.dll" />
+      </Component>
+      <Component Id="MarvinsArena.Robot.dll_1" Guid="{5BC5BDDA-8F92-47FA-94EC-304A431BA14C}">
+        <File Id="MarvinsArena.Robot.dll_1" Name="MarvinsArena.Robot.dll" KeyPath="yes" Source="..\Deployment\MarvinsArena.Robot.dll" />
+      </Component>
+      <Component Id="MarvinsArena.Robot.xml" Guid="{19624C5E-901F-4418-B0D2-A0929D2C7484}">
+        <File Id="MarvinsArena.Robot.xml" Name="MarvinsArena.Robot.xml" KeyPath="yes" Source="..\Deployment\MarvinsArena.Robot.xml" />
+      </Component>
+      <Component Id="ReleaseLog.txt" Guid="{E883D77C-9702-43C9-B9BF-B53BFC748F70}">
+        <File Id="ReleaseLog.txt" Name="ReleaseLog.txt" KeyPath="yes" Source="..\Deployment\ReleaseLog.txt" />
+      </Component>
+      <Component Id="BattleEngineCommon.dll" Guid="{F1BA1FD9-6556-475b-A996-AEC7461459EB}">
+        <File Id="BattleEngineCommon.dll" Name="BattleEngineCommon.dll" KeyPath="yes" Source="..\Deployment\BattleEngineCommon.dll" />
+      </Component>
+      <Component Id="SciLexer.dll" Guid="{8640C6D2-7B8B-433b-9A7C-58FAF80DB7EA}">
+        <File Id="SciLexer.dll" Name="SciLexer.dll" KeyPath="yes" Source="..\Deployment\SciLexer.dll" />
+      </Component>
+      <Component Id="ScintillaNet.dll" Guid="{18B50604-DE02-4b29-A2BE-557C41B34510}">
+        <File Id="ScintillaNet.dll" Name="ScintillaNet.dll" KeyPath="yes" Source="..\Deployment\ScintillaNet.dll" />
+      </Component>      
+      <Directory Id="Content" Name="Content">
+        <Component Id="File2D_Bullet.xnb" Guid="{910A1401-76C1-4692-853E-0026FEFD414A}">
+          <File Id="File2D_Bullet.xnb" Name="2D_Bullet.xnb" KeyPath="yes" Source="..\Deployment\Content\2D_Bullet.xnb" />
+        </Component>
+        <Component Id="File2D_Missile.xnb" Guid="{986FD67D-3CF4-4AEB-BD2D-BCB401589627}">
+          <File Id="File2D_Missile.xnb" Name="2D_Missile.xnb" KeyPath="yes" Source="..\Deployment\Content\2D_Missile.xnb" />
+        </Component>
+        <Component Id="File2D_Radar.xnb" Guid="{78236E8C-70A5-45C6-A590-228A082E44B0}">
+          <File Id="File2D_Radar.xnb" Name="2D_Radar.xnb" KeyPath="yes" Source="..\Deployment\Content\2D_Radar.xnb" />
+        </Component>
+        <Component Id="File2D_Tank.xnb" Guid="{8F2FB644-B2CB-4044-93CD-274336A24AB8}">
+          <File Id="File2D_Tank.xnb" Name="2D_Tank.xnb" KeyPath="yes" Source="..\Deployment\Content\2D_robot.xnb" />
+        </Component>
+        <Component Id="File2D_Turret.xnb" Guid="{F77848A9-FC17-497E-A16A-62FCA9F2205C}">
+          <File Id="File2D_Turret.xnb" Name="2D_Turret.xnb" KeyPath="yes" Source="..\Deployment\Content\2D_Turret.xnb" />
+        </Component>
+        <Component Id="engine_diff_tex_0.xnb" Guid="{CBDD1BBE-A37D-4337-B35B-073712086483}">
+          <File Id="engine_diff_tex_0.xnb" Name="engine_diff_tex_0.xnb" KeyPath="yes" Source="..\Deployment\Content\engine_diff_tex_0.xnb" />
+        </Component>
+        <Component Id="light.xnb" Guid="{2488F0D3-3852-489A-B60D-C7B827C81217}">
+          <File Id="light.xnb" Name="light.xnb" KeyPath="yes" Source="..\Deployment\Content\light.xnb" />
+        </Component>
+        <Component Id="map_scifi.xnb" Guid="{464AE5EE-D318-44AC-8D8E-7F318520C026}">
+          <File Id="map_scifi.xnb" Name="map_scifi.xnb" KeyPath="yes" Source="..\Deployment\Content\map_scifi.xnb" />
+        </Component>
+        <Component Id="map_wall.xnb" Guid="{0DCA5379-8CAE-404C-98CC-41378FC6AA7A}">
+          <File Id="map_wall.xnb" Name="map_wall.xnb" KeyPath="yes" Source="..\Deployment\Content\map_wall.xnb" />
+        </Component>
+        <Component Id="map_world.xnb" Guid="{AF985B39-78B9-46BA-8EA8-0D8F22174E99}">
+          <File Id="map_world.xnb" Name="map_world.xnb" KeyPath="yes" Source="..\Deployment\Content\map_world.xnb" />
+        </Component>
+        <Component Id="menufont.xnb" Guid="{E57558B5-CC38-40A3-9068-BCAEBFF1D1B9}">
+          <File Id="menufont.xnb" Name="menufont.xnb" KeyPath="yes" Source="..\Deployment\Content\menufont.xnb" />
+        </Component>
+        <Component Id="missile.xnb" Guid="{E7FD436D-6CA0-45AB-9441-E1C254277D99}">
+          <File Id="missile.xnb" Name="missile.xnb" KeyPath="yes" Source="..\Deployment\Content\missile.xnb" />
+        </Component>
+        <Component Id="missile_0.xnb" Guid="{B1104CA4-3650-4F69-AE51-49E3EDE0964B}">
+          <File Id="missile_0.xnb" Name="missile_0.xnb" KeyPath="yes" Source="..\Deployment\Content\missile_0.xnb" />
+        </Component>
+        <Component Id="pixel.xnb" Guid="{E648D89E-139A-4FE1-8ABE-0DB9F9F75079}">
+          <File Id="pixel.xnb" Name="pixel.xnb" KeyPath="yes" Source="..\Deployment\Content\pixel.xnb" />
+        </Component>
+        <Component Id="SphereLowPoly.xnb" Guid="{F1C5CBA7-104B-4537-B37E-20BBA57727C3}">
+          <File Id="SphereLowPoly.xnb" Name="SphereLowPoly.xnb" KeyPath="yes" Source="..\Deployment\Content\SphereLowPoly.xnb" />
+        </Component>
+        <Component Id="tank.xnb" Guid="{C1C83565-E2B5-4BD4-9DF6-C49447B9D8A0}">
+          <File Id="tank.xnb" Name="tank.xnb" KeyPath="yes" Source="..\Deployment\Content\robot.xnb" />
+        </Component>
+        <Component Id="turret_alt_diff_tex_0.xnb" Guid="{F9D83550-6525-4E49-858D-D7D648847934}">
+          <File Id="turret_alt_diff_tex_0.xnb" Name="turret_alt_diff_tex_0.xnb" KeyPath="yes" Source="..\Deployment\Content\turret_alt_diff_tex_0.xnb" />
+        </Component>
+        <Component Id="skyEffect.xnb" Guid="{F854C0B1-0CEC-4E70-BDAF-A0D14D1BEA6A}">
+          <File Id="skyEffect.xnb" Name="skyEffect.xnb" KeyPath="yes" Source="..\Deployment\Content\skyEffect.xnb" />
+        </Component>
+        <Component Id="SkySphere.xnb" Guid="{924513AC-24E4-405E-991E-985019CC8EF7}">
+          <File Id="SkySphere.xnb" Name="SkySphere.xnb" KeyPath="yes" Source="..\Deployment\Content\SkySphere.xnb" />
+        </Component>        
+        <Component Id="GK_CM_SK001_cm_rgba.xnb" Guid="{88FC4BE6-9755-4F9b-A969-2C680D86A1A5}">
+          <File Id="GK_CM_SK001_cm_rgba.xnb" Name="GK_CM_SK001_cm_rgba.xnb" KeyPath="yes" Source="..\Deployment\Content\GK_CM_SK001_cm_rgba.xnb" />
+        </Component>
+        <Component Id="GK_CM_SK008_cm_rgba.xnb" Guid="{DA2DF14B-BC20-4DE1-9E71-36B9194C028F}">
+          <File Id="GK_CM_SK008_cm_rgba.xnb" Name="GK_CM_SK008_cm_rgba.xnb" KeyPath="yes" Source="..\Deployment\Content\GK_CM_SK008_cm_rgba.xnb" />
+        </Component>
+        <Component Id="GK_CM_SK013_cm_rgba.xnb" Guid="{D17944E8-D26B-405A-8683-79736F68494F}">
+          <File Id="GK_CM_SK013_cm_rgba.xnb" Name="GK_CM_SK013_cm_rgba.xnb" KeyPath="yes" Source="..\Deployment\Content\GK_CM_SK013_cm_rgba.xnb" />
+        </Component>   
+        <Directory Id="Hud" Name="Hud">
+          <Component Id="Heat.xnb" Guid="{8397ADD6-4F88-470D-AE4A-3AC96A665431}">
+            <File Id="Heat.xnb" Name="Heat.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\Heat.xnb" />
+          </Component>
+          <Component Id="Hitpoints.xnb" Guid="{449925E6-F744-4348-9166-2F3679994C6E}">
+            <File Id="Hitpoints.xnb" Name="Hitpoints.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\Hitpoints.xnb" />
+          </Component>
+          <Component Id="Missiles.xnb" Guid="{7CDD00B7-2A77-40C6-97F6-E13D6DBC1B1B}">
+            <File Id="Missiles.xnb" Name="Missiles.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\Missiles.xnb" />
+          </Component>
+          <Component Id="Outer.xnb" Guid="{613E534F-3DD7-4E56-A02D-0DCEBC5EE38E}">
+            <File Id="Outer.xnb" Name="Outer.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\Outer.xnb" />
+          </Component>
+          <Component Id="Radar.xnb" Guid="{BC53C9D3-B73C-466B-967E-8F56772457FC}">
+            <File Id="Radar.xnb" Name="Radar.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\Radar.xnb" />
+          </Component>
+          <Component Id="RadarBar.xnb" Guid="{7BDDC76E-05BA-4D7B-9D5C-497C0DD2D13E}">
+            <File Id="RadarBar.xnb" Name="RadarBar.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\RadarBar.xnb" />
+          </Component>
+          <Component Id="smallfont.xnb" Guid="{7056C1AD-6D81-4BB7-B18E-1E049592CE8A}">
+            <File Id="smallfont.xnb" Name="smallfont.xnb" KeyPath="yes" Source="..\Deployment\Content\Hud\smallfont.xnb" />
+          </Component>
+        </Directory>
+      </Directory>
+      <Directory Id="Robots" Name="Robots">
+        <Component Id="MarvinsArena.Robot.Core.dll_2" Guid="{A15DF009-1F0E-4E23-8DEF-EF424EEA46F2}">
+          <File Id="MarvinsArena.Robot.Core.dll_2" Name="MarvinsArena.Robot.Core.dll" KeyPath="yes" Source="..\Deployment\Robots\MarvinsArena.Robot.Core.dll" />
+        </Component>
+        <Component Id="MarvinsArena.Robot.dll_2" Guid="{FDDDB79C-B8BC-49DD-9525-A405D7DA6256}">
+          <File Id="MarvinsArena.Robot.dll_2" Name="MarvinsArena.Robot.dll" KeyPath="yes" Source="..\Deployment\Robots\MarvinsArena.Robot.dll" />
+        </Component>
+        <Component Id="MyRobot.dll" Guid="{47E509DA-8633-4757-8985-147AE04E8191}">
+          <File Id="MyRobot.dll" Name="MyRobot.dll" KeyPath="yes" Source="..\Deployment\Robots\MyRobot.dll" />
+        </Component>
+        <Component Id="MyRobotVB.dll" Guid="{C6FCFE62-36D2-4F21-A45B-7167070C375D}">
+          <File Id="MyRobotVB.dll" Name="MyRobotVB.dll" KeyPath="yes" Source="..\Deployment\Robots\MyRobotVB.dll" />
+        </Component>
+        <Component Id="SitAndFire.dll" Guid="{889CC251-DCAB-43A9-B422-20D693165D01}">
+          <File Id="SitAndFire.dll" Name="SitAndFire.dll" KeyPath="yes" Source="..\Deployment\Robots\SitAndFire.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="Maps" Name="Maps">
+        <Component Id="MarvinsArena.mam" Guid="{2E48A51A-4E4A-4F18-90FE-386FD410349E}">
+          <File Id="MarvinsArena.mam" Name="MarvinsArena.mam" KeyPath="yes" Source="..\Deployment\Maps\MarvinsArena.mam" />
+        </Component>
+        <Component Id="Huge_TheX.mam" Guid="{6FE9C3B9-D602-49A1-A6BF-E597FCF863E7}">
+          <File Id="Huge_TheX.mam" Name="Huge_TheX.mam" KeyPath="yes" Source="..\Deployment\Maps\Huge_TheX.mam" />
+        </Component>
+        <Component Id="Large_GridChaos.mam" Guid="{CED1FD9C-626E-4C2E-97FB-ACA9204CF616}">
+          <File Id="Large_GridChaos.mam" Name="Large_GridChaos.mam" KeyPath="yes" Source="..\Deployment\Maps\Large_GridChaos.mam" />
+        </Component>
+        <Component Id="Medium_FreeCorners.mam" Guid="{71154F5A-1832-4775-83E7-80B5929ED64E}">
+          <File Id="Medium_FreeCorners.mam" Name="Medium_FreeCorners.mam" KeyPath="yes" Source="..\Deployment\Maps\Medium_FreeCorners.mam" />
+        </Component>
+        <Component Id="Naming.txt" Guid="{B97D6DC6-FA16-40F6-952D-8D3820A9CFF7}">
+          <File Id="Naming.txt" Name="Naming.txt" KeyPath="yes" Source="..\Deployment\Maps\Naming.txt" />
+        </Component>
+        <Component Id="Small_Block.mam" Guid="{C544186D-83EE-465A-83BD-367EA62F52A6}">
+          <File Id="Small_Block.mam" Name="Small_Block.mam" KeyPath="yes" Source="..\Deployment\Maps\Small_Block.mam" />
+        </Component>
+        <Component Id="Small_Plus.mam" Guid="{E398406E-871A-4B3A-AB6D-9A8B1BF70A58}">
+          <File Id="Small_Plus.mam" Name="Small_Plus.mam" KeyPath="yes" Source="..\Deployment\Maps\Small_Plus.mam" />
+        </Component>
+      </Directory>
+      <Directory Id="Tournaments" Name="Tournaments">
+        <Component Id="Tournament.xtml" Guid="{DC82B4D6-12C3-47F2-83B4-EB5CD1EC70C4}">
+          <File Id="Tournament.xtml" Name="Tournament.xtml" KeyPath="yes" Source="..\Deployment\Tournaments\Tournament.xtml" />
+        </Component>
+      </Directory>      
+    </DirectoryRef>
+
+    <!-- Start Menu Entry -->
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="{A8541203-8164-4B28-A44E-89C636EBEBFD}">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Marvin's Arena"
+                  Icon="ProductIcon"
+                  Target="[APPLICATIONFOLDER]MarvinsArena.exe"
+                  WorkingDirectory="APPLICATIONFOLDER"/>
+        <Shortcut Id="DocumentationStartMenuShortcut"
+                  Name="Documentation"
+                  Target="[APPLICATIONFOLDER]Documentation.chm"
+                  WorkingDirectory="APPLICATIONFOLDER"/>
+        <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MarvinsArena" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  
+    <ComponentGroup Id="ComponentGroup1">
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="File2DBattleEngine.exe" />
+      <ComponentRef Id="File2DBattleEngine.exe.config" />
+      <ComponentRef Id="File3DBattleEngine.exe" />
+      <ComponentRef Id="File3DBattleEngine.exe.config" />
+      <ComponentRef Id="Documentation.chm" />
+      <ComponentRef Id="MarvinsArena.Core.dll" />
+      <ComponentRef Id="MarvinsArena.exe" />
+      <ComponentRef Id="MarvinsArena.Robot.Core.dll_1" />
+      <ComponentRef Id="MarvinsArena.Robot.dll_1" />
+      <ComponentRef Id="MarvinsArena.Robot.xml" />
+      <ComponentRef Id="ReleaseLog.txt" />
+      <ComponentRef Id="BattleEngineCommon.dll" />
+      <ComponentRef Id="SciLexer.dll" />
+      <ComponentRef Id="ScintillaNet.dll" />
+      <ComponentRef Id="File2D_Bullet.xnb" />
+      <ComponentRef Id="File2D_Missile.xnb" />
+      <ComponentRef Id="File2D_Radar.xnb" />
+      <ComponentRef Id="File2D_Tank.xnb" />
+      <ComponentRef Id="File2D_Turret.xnb" />
+      <ComponentRef Id="engine_diff_tex_0.xnb" />
+      <ComponentRef Id="light.xnb" />
+      <ComponentRef Id="map_scifi.xnb" />
+      <ComponentRef Id="map_wall.xnb" />
+      <ComponentRef Id="map_world.xnb" />
+      <ComponentRef Id="menufont.xnb" />
+      <ComponentRef Id="missile.xnb" />
+      <ComponentRef Id="missile_0.xnb" />
+      <ComponentRef Id="pixel.xnb" />
+      <ComponentRef Id="SphereLowPoly.xnb" />
+      <ComponentRef Id="tank.xnb" />
+      <ComponentRef Id="turret_alt_diff_tex_0.xnb" />
+      <ComponentRef Id="Heat.xnb" />
+      <ComponentRef Id="Hitpoints.xnb" />
+      <ComponentRef Id="Missiles.xnb" />
+      <ComponentRef Id="Outer.xnb" />
+      <ComponentRef Id="Radar.xnb" />
+      <ComponentRef Id="RadarBar.xnb" />
+      <ComponentRef Id="smallfont.xnb" />
+      <ComponentRef Id="MarvinsArena.Robot.Core.dll_2" />
+      <ComponentRef Id="MarvinsArena.Robot.dll_2" />
+      <ComponentRef Id="MyRobot.dll" />
+      <ComponentRef Id="MyRobotVB.dll" />
+      <ComponentRef Id="SitAndFire.dll" />
+      <ComponentRef Id="MarvinsArena.mam" />
+      <ComponentRef Id="Huge_TheX.mam" />
+      <ComponentRef Id="Large_GridChaos.mam" />
+      <ComponentRef Id="Medium_FreeCorners.mam" />
+      <ComponentRef Id="Naming.txt" />
+      <ComponentRef Id="Small_Block.mam" />
+      <ComponentRef Id="Small_Plus.mam" />
+      <ComponentRef Id="Tournament.xtml" />
+      <ComponentRef Id="GK_CM_SK001_cm_rgba.xnb" />
+      <ComponentRef Id="GK_CM_SK008_cm_rgba.xnb" />
+      <ComponentRef Id="GK_CM_SK013_cm_rgba.xnb" />
+      <ComponentRef Id="skyEffect.xnb" />
+      <ComponentRef Id="SkySphere.xnb" />
+      </ComponentGroup>
+  </Fragment>
+</Wix>

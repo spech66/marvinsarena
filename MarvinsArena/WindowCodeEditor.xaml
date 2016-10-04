@@ -1,0 +1,160 @@
+﻿<Window x:Class="MarvinsArena.WindowCodeEditor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+    xmlns:scintilla="clr-namespace:ScintillaNet;assembly=ScintillaNet"
+    xmlns:validation="clr-namespace:MarvinsArena"
+    Title="Code Editor" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Width="Auto" Height="Auto">
+        <Grid.Resources>
+            <Image x:Key="MenuIconNewCSharp" Source="ToolBarIcons/new2.png" Width="16" Height="16" ToolTip="New" SnapsToDevicePixels="True" />
+            <Image x:Key="MenuIconNewVisualBasic" Source="ToolBarIcons/new2.png" Width="16" Height="16" ToolTip="New" SnapsToDevicePixels="True" />
+            <Image x:Key="MenuIconOpen" Source="ToolBarIcons/open.png" Width="16" Height="16" ToolTip="Open" SnapsToDevicePixels="True" />
+            <Image x:Key="MenuIconSave" Source="ToolBarIcons/save.png" Width="16" Height="16" ToolTip="Save" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconBuild" Source="ToolBarIcons/build.png" Width="16" Height="16" ToolTip="Build" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconRun2D" Source="ToolBarIcons/run2d.png" Width="16" Height="16" ToolTip="Run 2D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconRun3D" Source="ToolBarIcons/run3d.png" Width="16" Height="16" ToolTip="Run 3D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconDocu" Source="ToolBarIcons/docu.png" Width="16" Height="16" ToolTip="Documentation" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconPrint" Source="ToolBarIcons/print.png" Width="16" Height="16" ToolTip="Print" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconPrintPreview" Source="ToolBarIcons/printpreview.png" Width="16" Height="16" ToolTip="Print Preview" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditUndo" Source="ToolBarIcons/editundo.png" Width="16" Height="16" ToolTip="Undo" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditRedo" Source="ToolBarIcons/editredo.png" Width="16" Height="16" ToolTip="Redo" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditCut" Source="ToolBarIcons/editcut.png" Width="16" Height="16" ToolTip="Cut" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditCopy" Source="ToolBarIcons/editcopy.png" Width="16" Height="16" ToolTip="Copy" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditPaste" Source="ToolBarIcons/editpaste.png" Width="16" Height="16" ToolTip="Paste" SnapsToDevicePixels="True"/>
+            <Image x:Key="MenuIconEditDelete" Source="ToolBarIcons/editdelete.png" Width="16" Height="16" ToolTip="Delete" SnapsToDevicePixels="True"/>
+
+            <Image x:Key="ButtonIconNewCSharp" Source="ToolBarIcons/new2.png" Width="16" Height="16" ToolTip="New C#" SnapsToDevicePixels="True" />
+            <Image x:Key="ButtonIconNewVisualBasic" Source="ToolBarIcons/new2.png" Width="16" Height="16" ToolTip="New Visual Basic" SnapsToDevicePixels="True" />
+            <Image x:Key="ButtonIconOpen" Source="ToolBarIcons/open.png" Width="16" Height="16" ToolTip="Open" SnapsToDevicePixels="True" />
+            <Image x:Key="ButtonIconSave" Source="ToolBarIcons/save.png" Width="16" Height="16" ToolTip="Save" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconBuild" Source="ToolBarIcons/build.png" Width="16" Height="16" ToolTip="Build" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconRun2D" Source="ToolBarIcons/run2d.png" Width="16" Height="16" ToolTip="Run 2D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconRun3D" Source="ToolBarIcons/run3d.png" Width="16" Height="16" ToolTip="Run 3D Battle Engine" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconDocu" Source="ToolBarIcons/docu.png" Width="16" Height="16" ToolTip="Documentation" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconUndo" Source="ToolBarIcons/editundo.png" Width="16" Height="16" ToolTip="Undo" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconRedo" Source="ToolBarIcons/editredo.png" Width="16" Height="16" ToolTip="Redo" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconCut" Source="ToolBarIcons/editcut.png" Width="16" Height="16" ToolTip="Cut" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconCopy" Source="ToolBarIcons/editcopy.png" Width="16" Height="16" ToolTip="Copy" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconPaste" Source="ToolBarIcons/editpaste.png" Width="16" Height="16" ToolTip="Paste" SnapsToDevicePixels="True"/>
+            <Image x:Key="ButtonIconDelete" Source="ToolBarIcons/editdelete.png" Width="16" Height="16" ToolTip="Delete" SnapsToDevicePixels="True"/>
+        </Grid.Resources>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Gray" Offset="0" />
+                <GradientStop Color="Black" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Width="Auto" Height="24" DockPanel.Dock="Top">
+            <!-- File Menu -->
+            <MenuItem Header="File">
+                <MenuItem Header="New C#" Icon="{StaticResource MenuIconNewCSharp}" Click="MenuItemNewCSharp_Click" />
+                <MenuItem Header="New Visual Basic" Icon="{StaticResource MenuIconNewVisualBasic}" Click="MenuItemNewVisualBasic_Click" />
+                <MenuItem Header="Open" Icon="{StaticResource MenuIconOpen}" Click="MenuItemOpen_Click" />
+                <Separator/>
+                <MenuItem Header="Save" Icon="{StaticResource MenuIconSave}" Click="MenuItemSave_Click" Name="MenuItemSave" />
+                <MenuItem Header="Save As..." Click="MenuItemSaveAs_Click" Name="MenuItemSaveAs" />
+                <Separator/>
+                <MenuItem Header="Print Preview" Icon="{StaticResource MenuIconPrintPreview}" Click="MenuItemPrintPreview_Click" />
+                <MenuItem Header="Print" Icon="{StaticResource MenuIconPrint}" Click="MenuItemPrint_Click" />
+                <Separator/>
+                <MenuItem Header="Close" Click="MenuItemExit_Click" />
+            </MenuItem>
+            <!-- Edit Menu -->
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" Icon="{StaticResource MenuIconEditUndo}" Click="MenuItemUndo_Click" />
+                <MenuItem Header="Redo" Icon="{StaticResource MenuIconEditRedo}" Click="MenuItemRedo_Click" />
+                <Separator/>
+                <MenuItem Header="Cut" Icon="{StaticResource MenuIconEditCut}" Click="MenuItemCut_Click" />
+                <MenuItem Header="Copy" Icon="{StaticResource MenuIconEditCopy}" Click="MenuItemCopy_Click" />
+                <MenuItem Header="Paste" Icon="{StaticResource MenuIconEditPaste}" Click="MenuItemPaste_Click" />
+                <MenuItem Header="Delete" Icon="{StaticResource MenuIconEditDelete}" Click="MenuItemDelete_Click" />
+            </MenuItem>
+            <!-- Build Menu -->
+            <MenuItem Header="Build">
+                <MenuItem Header="Build" Icon="{StaticResource MenuIconBuild}" Click="MenuItemBuildBuild_Click" Name="MenuItemBuild" />
+            </MenuItem>
+            <!-- Run Menu -->
+            <MenuItem Header="Run">
+                <MenuItem Header="2D Battle Engines" Icon="{StaticResource MenuIconRun2D}" Click="MenuItemRun2DBattleEngine_Click" Name="MenuItemRun2DBattleEngine" />
+                <MenuItem Header="3D Battle Engines" Icon="{StaticResource MenuIconRun3D}" Click="MenuItemRun3DBattleEngine_Click" Name="MenuItemRun3DBattleEngine" />
+            </MenuItem>
+            <!-- About Menu -->
+            <MenuItem Header="Help">
+                <MenuItem Header="Documentation" Icon="{StaticResource MenuIconDocu}" Click="MenuItemDocu_Click" />
+            </MenuItem>
+        </Menu>
+
+        <ToolBarTray Grid.Row="1" Background="#FF333333" SnapsToDevicePixels="True">
+            <ToolBar Band="1" BandIndex="1" SnapsToDevicePixels="True">
+                <Button Click="MenuItemNewCSharp_Click" Content="{StaticResource ButtonIconNewCSharp}" />
+                <Button Click="MenuItemNewVisualBasic_Click" Content="{StaticResource ButtonIconNewVisualBasic}" />
+                <Button Click="MenuItemOpen_Click" Content="{StaticResource ButtonIconOpen}" />
+                <Button Click="MenuItemSave_Click" Content="{StaticResource ButtonIconSave}" Name="ToolBarSave" />
+            </ToolBar>
+
+            <ToolBar Band="1" BandIndex="2" SnapsToDevicePixels="True">
+                <Button Click="MenuItemUndo_Click" Content="{StaticResource ButtonIconUndo}" />
+                <Button Click="MenuItemRedo_Click" Content="{StaticResource ButtonIconRedo}" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="3" SnapsToDevicePixels="True">
+                <Button Click="MenuItemCut_Click" Content="{StaticResource ButtonIconCut}" />
+                <Button Click="MenuItemCopy_Click" Content="{StaticResource ButtonIconCopy}" />
+                <Button Click="MenuItemPaste_Click" Content="{StaticResource ButtonIconPaste}" />
+                <Button Click="MenuItemDelete_Click" Content="{StaticResource ButtonIconDelete}" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="4" SnapsToDevicePixels="True">
+                <Button Click="MenuItemBuildBuild_Click" Content="{StaticResource ButtonIconBuild}" Name="ToolBarBuild" />
+                <Button Click="MenuItemRun2DBattleEngine_Click" Content="{StaticResource ButtonIconRun2D}" Name="ToolBarRun2DBattleEngine" />
+                <Button Click="MenuItemRun3DBattleEngine_Click" Content="{StaticResource ButtonIconRun3D}" Name="ToolBarRun3DBattleEngine" />
+            </ToolBar>
+            <ToolBar Band="1" BandIndex="5" SnapsToDevicePixels="True">
+                <Button Click="MenuItemDocu_Click" Content="{StaticResource ButtonIconDocu}" />
+            </ToolBar>
+        </ToolBarTray>
+        
+        <wfi:WindowsFormsHost Grid.Row="2">
+                <scintilla:Scintilla x:Name="ScintillaEditor"></scintilla:Scintilla>
+            </wfi:WindowsFormsHost>
+
+            <GroupBox Grid.Row="3" Header="Information" Name="groupBox1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="Name:" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Grid.Row="0" Name="textBoxInfoName" VerticalAlignment="Top" />
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="Version:" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Grid.Row="1" Name="textBoxInfoVersion" VerticalAlignment="Top" />
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="Author:" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Grid.Row="2" Name="textBoxInfoAuthor" VerticalAlignment="Top" />
+                    <TextBlock Grid.Column="0" Grid.Row="3" Text="Description:" VerticalAlignment="Top" />
+                    <TextBox Grid.Column="1" Grid.Row="3" Name="textBoxInfoDescription" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </GroupBox>
+        
+        <GroupBox Grid.Row="4" Header="Errors" Name="groupBox2" MaxHeight="180">
+        <ListBox x:Name="ErrorList"></ListBox>
+            </GroupBox>
+        
+        </Grid>
+</Window>
