@@ -1,0 +1,25 @@
+MarvinsArena.Core
+	Host
+		Runs in new AppDomain
+		Loads plugin
+		Assigns core robot
+		Run
+	Loader
+		Create Domain
+		Create Host
+	Manager
+		Manage Teams
+		Create Game Objects
+	Team
+		Manage Hosts
+MarvinsArena.Robot
+	IRobot
+		Interface
+	Robot
+		Call RobotCore
+MarvinsArena.Robot.Core
+	RobotCore
+	
+	RobotHostMessageExchange
+MyRobot
+	MyRobot
